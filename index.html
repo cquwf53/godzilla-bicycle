@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥斯拉 · 骑行日记</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#eee9dc;color:#243d36;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100svh;display:grid;place-items:center;padding:36px 20px}.poster{width:min(1120px,100%)}header{display:flex;justify-content:space-between;align-items:end;padding:0 4px 24px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase}h1{font-size:clamp(29px,5vw,56px);letter-spacing:-2px;margin:12px 0 0;font-weight:800}header p{font-size:13px;line-height:1.8;margin:0;text-align:right;color:#66736a}.scene{border:1px solid #bdc3ae;border-radius:18px;overflow:hidden;background:#e5edd2;box-shadow:0 20px 60px #263e3610}svg{display:block;width:100%;height:auto}footer{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;font-size:12px;color:#66736a}.status{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%;background:#5a8762}button{border:1px solid #b8c1b1;background:transparent;color:#243d36;padding:10px 17px;border-radius:30px;font:inherit;cursor:pointer}button:hover{background:#dde4d1}button:focus-visible{outline:3px solid #759674;outline-offset:3px}.spin{animation:spin 1.5s linear infinite;transform-box:fill-box;transform-origin:center}.rider{animation:bob 1.5s ease-in-out infinite}.tail{animation:sway 3s ease-in-out infinite;transform-origin:553px 349px}.city{animation:travel 24s linear infinite}.near{animation:travel 7s linear infinite}.clouds{animation:travel 65s linear infinite}.leg-near{animation:legNear 1.5s ease-in-out infinite;transform-origin:541px 320px}.leg-far{animation:legFar 1.5s ease-in-out infinite;transform-origin:536px 320px}.steam{animation:puff 3s ease-out infinite;transform-origin:640px 193px}.paused *{animation-play-state:paused!important}@keyframes spin{to{transform:rotate(360deg)}}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}@keyframes travel{to{transform:translateX(-1100px)}}@keyframes legNear{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(13deg)}}@keyframes legFar{0%,100%{transform:rotate(13deg)}50%{transform:rotate(-9deg)}}@keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.65)}25%{opacity:.65}100%{opacity:0;transform:translate(40px,-25px) scale(1.3)}}@media(max-width:600px){body{padding:25px 12px}header p{display:none}header{padding-bottom:20px}footer{font-size:10px}.eyebrow{font-size:9px;letter-spacing:2px}}@media(prefers-reduced-motion:reduce){svg *{animation-play-state:paused!important}}
+</style>
+</head>
+<body>
+<main class="poster">
+  <header><div><div class="eyebrow">Kaiju cycling club / est. 1954</div><h1>今天，不破坏城市。</h1></div><p>哥斯拉的低碳出行计划<br>一辆单车，一整个好天气。</p></header>
+  <div class="scene">
+  <svg id="animation" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg">
+    <title id="title">哥斯拉骑自行车</title><desc id="desc">绿色哥斯拉骑着橙色自行车，车轮旋转、身体起伏、尾巴摆动，沿着海边城市悠闲前进。</desc>
+    <defs>
+      <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e5edd2"/><stop offset="1" stop-color="#f8efd7"/></linearGradient>
+      <linearGradient id="body" x1="0" x2="1" y2="1"><stop stop-color="#597b57"/><stop offset="1" stop-color="#294e43"/></linearGradient>
+      <pattern id="windows" width="20" height="26" patternUnits="userSpaceOnUse"><rect x="7" y="8" width="5" height="10" rx="1" fill="#e6ead2" opacity=".6"/></pattern>
+      <g id="skyline" fill="#b6c6b0"><path d="M0 420V332H43V288H81V420H96V315H148V420H174V265H220V242H230V265H254V420H285V345H343V305H382V420H409V283H466V420H499V320H544V420H570V235H615V214H627V235H658V420H690V304H734V279H771V420H802V332H864V420H887V256H939V420H967V312H1011V288H1048V420H1100V450H0Z"/><path d="M0 420V332H43V288H81V420H96V315H148V420H174V265H220V242H230V265H254V420H285V345H343V305H382V420H409V283H466V420H499V320H544V420H570V235H615V214H627V235H658V420H690V304H734V279H771V420H802V332H864V420H887V256H939V420H967V312H1011V288H1048V420H1100V450H0Z" fill="url(#windows)"/></g>
+      <g id="cloud" fill="#fbf8e9"><path d="M0 28C-8 10 17 1 28 13C29-12 68-16 76 9C96-3 117 11 114 27Z"/></g>
+      <g id="roadmark"><path d="M0 558H85M220 558H305M440 558H525M660 558H745M880 558H965" stroke="#f2ecd6" stroke-width="5" stroke-linecap="round"/></g>
+      <g id="wheel"><circle r="77" fill="#f4edda" fill-opacity=".35" stroke="#293f38" stroke-width="12"/><circle r="68" fill="none" stroke="#f6efd9" stroke-width="3"/><g class="spin" stroke="#60776b" stroke-width="2" opacity=".85"><path d="M-65 0H65M0-65V65M-46-46L46 46M-46 46L46-46M-60-25L60 25M-25-60L25 60M-60 25L60-25M-25 60L25-60"/><path d="M-59-29A66 66 0 0 1-29-59" fill="none" stroke="#efb55a" stroke-width="5"/></g><circle r="9" fill="#263f37"/><circle r="3" fill="#eee8d4"/></g>
+    </defs>
+    <rect width="1100" height="620" fill="url(#sky)"/>
+    <circle cx="853" cy="123" r="63" fill="#ecc575"/><circle cx="853" cy="123" r="80" fill="none" stroke="#e8d5a1" opacity=".5"/>
+    <g class="clouds" opacity=".75"><use href="#cloud" x="115" y="94"/><use href="#cloud" x="495" y="61"/><use href="#cloud" x="965" y="169"/><use href="#cloud" x="1215" y="94"/><use href="#cloud" x="1595" y="61"/><use href="#cloud" x="2065" y="169"/></g>
+    <g stroke="#889c82" stroke-width="2" fill="none" stroke-linecap="round"><path d="M739 175q8-9 16 0q8-9 16 0M783 197q6-7 12 0q6-7 12 0"/></g>
+    <path d="M0 365Q150 275 290 352T580 350T890 348T1170 324V455H0Z" fill="#cfdbc0"/>
+    <g class="city" opacity=".75"><use href="#skyline"/><use href="#skyline" x="1100"/></g>
+    <path d="M0 427H1100V484H0Z" fill="#abc8ba"/><path d="M0 443H1100M0 469H1100" stroke="#dce5cb" stroke-width="2" opacity=".7"/>
+    <rect y="482" width="1100" height="138" fill="#b6bca0"/><rect y="482" width="1100" height="8" fill="#e4e4c9"/>
+    <g class="near"><use href="#roadmark"/><use href="#roadmark" x="1100"/></g>
+    <ellipse cx="538" cy="533" rx="235" ry="15" fill="#3f5b43" opacity=".13"/>
+    <!-- Tail and dorsal plates -->
+    <g class="rider">
+      <g class="tail"><path d="M555 321C464 330 439 395 356 403C295 410 247 380 206 351C234 410 288 451 360 445C457 439 492 396 563 391Z" fill="url(#body)" stroke="#294b3d" stroke-width="4" stroke-linejoin="round"/><path d="M248 379L242 357L271 391L282 367L308 402L323 376L345 405L366 378L383 397L409 362L418 383L447 343L454 365L489 327" fill="#86a179" stroke="#294b3d" stroke-width="3" stroke-linejoin="round"/></g>
+      <path d="M517 164L493 150L497 189L471 180L480 219L451 216L466 250L436 253L455 283L428 297L452 322L441 351L475 347L471 380L513 366" fill="#8da57b" stroke="#294b3d" stroke-width="4" stroke-linejoin="round"/>
+      <path class="leg-far" d="M530 314Q603 325 591 377L554 429L577 441Q581 452 564 454H531Q516 450 523 434L550 379L508 369Z" fill="#305043" stroke="#294b3d" stroke-width="4"/>
+    </g>
+    <!-- Bicycle -->
+    <use href="#wheel" x="390" y="449"/><use href="#wheel" x="713" y="449"/>
+    <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M390 449L469 342L520 449ZM469 342L661 342L520 449M520 449H390M661 342L713 449" stroke="#8f4b34" stroke-width="12"/>
+      <path d="M390 449L469 342L520 449L661 342H469M520 449H390M661 342L713 449" stroke="#dc8050" stroke-width="7"/>
+      <path d="M469 342L457 317M661 342L647 304L670 283H702" stroke="#344e44" stroke-width="7"/>
+      <path d="M688 283H708" stroke="#263d35" stroke-width="10"/>
+      <path d="M670 291Q734 327 705 401" stroke="#4e6857" stroke-width="2"/>
+      <path d="M433 316H483" stroke="#263e35" stroke-width="13"/>
+      <path d="M323 413A80 80 0 0 1 452 396M649 398A80 80 0 0 1 779 411" stroke="#ede4cc" stroke-width="5"/>
+    </g>
+    <circle cx="520" cy="449" r="22" fill="#3c5648" stroke="#eee5ce" stroke-width="3"/>
+    <g transform="translate(520 449)"><g class="spin"><path d="M-28 0H28" stroke="#d9d7be" stroke-width="5"/><path d="M-35-3H-21M21 3H35" stroke="#263f37" stroke-width="6" stroke-linecap="round"/></g></g>
+    <!-- Godzilla -->
+    <g class="rider">
+      <path d="M506 176Q528 151 565 171L591 215Q624 256 609 312Q597 350 556 365Q513 384 474 348Q446 319 463 264Z" fill="url(#body)" stroke="#294b3d" stroke-width="4"/>
+      <path d="M565 221Q604 247 594 297Q588 327 560 339Q530 342 522 316Q533 291 536 266Z" fill="#a3b28a"/>
+      <g fill="none" stroke="#778f6d" stroke-width="2" opacity=".75"><path d="M549 263Q569 275 596 272M540 280Q562 292 596 287M536 298Q559 310 590 303M534 316Q556 327 580 319"/></g>
+      <path d="M510 184L507 157Q506 132 526 125L554 117Q575 114 590 130L601 142L641 147Q650 149 650 161L649 178Q646 190 629 191L581 193L569 221L522 215Z" fill="url(#body)" stroke="#294b3d" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M598 177H644" stroke="#233f32" stroke-width="3" stroke-linecap="round"/><path d="M608 178L612 186L617 178M627 178L631 185L636 178" fill="#f5edcf"/>
+      <circle cx="637" cy="156" r="3" fill="#294b3d"/>
+      <path d="M552 145L575 143" stroke="#294b3d" stroke-width="5" stroke-linecap="round"/><ellipse cx="568" cy="153" rx="8" ry="9" fill="#f6eac7"/><ellipse cx="571" cy="154" rx="3.5" ry="5" fill="#233f32"/><circle cx="572" cy="152" r="1.3" fill="white"/>
+      <path d="M578 232Q600 226 618 255L639 274L679 274Q693 278 686 289L634 292Q621 292 610 281L580 261" fill="#557853" stroke="#294b3d" stroke-width="4" stroke-linecap="round"/><path d="M674 277V287M680 279V287" stroke="#294b3d" stroke-width="2"/>
+      <path class="leg-near" d="M515 308Q551 306 572 334Q591 356 570 379L542 409L554 423Q567 427 564 438Q561 445 548 444L514 441Q503 438 508 420L526 371L502 363Q481 351 487 331Z" fill="#587c56" stroke="#294b3d" stroke-width="4" stroke-linejoin="round"/>
+      <g fill="#314f3f" opacity=".55"><ellipse cx="490" cy="248" rx="5" ry="8" transform="rotate(20 490 248)"/><ellipse cx="478" cy="274" rx="4" ry="6"/><ellipse cx="493" cy="284" rx="4" ry="6"/><circle cx="513" cy="337" r="5"/><circle cx="526" cy="349" r="4"/><circle cx="506" cy="350" r="3"/><circle cx="533" cy="185" r="4"/></g>
+      <!-- A small wind-blown scarf -->
+      <path d="M515 202Q538 218 578 204L575 216Q539 230 511 215Z" fill="#d9784d" stroke="#a35337" stroke-width="2"/><path d="M514 209Q482 192 454 207L432 197L441 217Q480 227 514 216" fill="#de8858" stroke="#a35337" stroke-width="2"/>
+      <g class="steam" fill="none" stroke="#f9f5e5" stroke-width="4" stroke-linecap="round"><path d="M664 164Q681 156 674 145Q668 135 681 126M678 176Q697 167 694 153"/></g>
+    </g>
+    <g fill="#4d7053" transform="translate(65 470)"><path d="M0 13Q-13-9-21-6Q-18 10 0 13M0 13Q7-13 18-14Q20 5 0 13"/><path d="M0 13V26" stroke="#4d7053" stroke-width="3"/></g>
+    <g font-family="system-ui,sans-serif" fill="#5c7661"><text x="40" y="43" font-size="11" letter-spacing="3">A SLOW DAY IN TOKYO</text><text x="1060" y="43" font-size="11" text-anchor="end" letter-spacing="2">35°40′ N / 139°45′ E</text><text x="40" y="596" font-size="10" letter-spacing="2">LESS ROAR. MORE PEDAL.</text><text x="1060" y="596" font-size="10" text-anchor="end" letter-spacing="2">怪兽也需要兜兜风</text></g>
+  </svg>
+  </div>
+  <footer><div class="status"><span class="dot"></span><span id="caption">城市安然无恙 · 骑行进行中</span></div><button id="toggle" type="button" aria-pressed="false">暂停动画</button></footer>
+</main>
+<script>
+  const scene=document.getElementById('animation');
+  const toggle=document.getElementById('toggle');
+  const caption=document.getElementById('caption');
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function update(){const paused=scene.classList.contains('paused');toggle.textContent=paused?'继续骑行':'暂停动画';toggle.setAttribute('aria-pressed',String(paused));caption.textContent=paused?'城市安然无恙 · 休息一下':'城市安然无恙 · 骑行进行中';}
+  toggle.addEventListener('click',()=>{scene.classList.toggle('paused');update();});
+  if(reduced.matches){scene.classList.add('paused');toggle.disabled=true;toggle.textContent='已减少动态效果';caption.textContent='城市安然无恙 · 静静享受好天气';}
+</script>
+</body>
+</html>
